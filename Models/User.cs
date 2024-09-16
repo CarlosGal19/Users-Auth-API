@@ -1,7 +1,7 @@
 ﻿namespace Users_Login_Api.Models
-
 {
     using BCrypt.Net;
+
     public class User
     {
         public int Id { get; set; }
@@ -12,8 +12,7 @@
 
         public void HashPassword(string password)
         {
-            var Salt = BCrypt.GenerateSalt();
-            PasswordHashed = BCrypt.HashPassword(password, Salt);
+            PasswordHashed = BCrypt.HashPassword(password);
         }
 
         public bool VerifyPassword(string password)
